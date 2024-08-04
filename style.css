@@ -1,0 +1,351 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+.container i{
+  margin-right: 25px;
+}
+body {
+  /* background-image: url("https://cdn.pixabay.com/animation/2024/07/23/19/52/19-52-56-478_512.gif");
+  background-position: 100% auto;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  background-image: linear-gradient(90deg, #050C9C 0%, #3572EF 35%, #3ABEF9 65%, #A7E6FF 100%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+  align-items: center;
+}
+.wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+.round {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #01b4f9;
+  border: 5px solid #01b4f9;
+  opacity: 0;
+  box-shadow: 0 0 100px #01b4f9, 0 0 10px #01b4f9, 0 0 20px #01b4f9;
+  animation: animate 4s linear infinite, ani-2 2s linear infinite;
+}
+.round:nth-child(1) {
+  left: 5%;
+  animation-delay: 0.5s;
+}
+.round:nth-child(2) {
+  left: 65%;
+  animation-delay: 1s;
+}
+.round:nth-child(3) {
+  left: 90%;
+  animation-delay: 1.5s;
+}
+.round:nth-child(4) {
+  left: 18%;
+  animation-delay: 2s;
+}
+.round:nth-child(5) {
+  left: 93%;
+  animation-delay: 2.5s;
+}
+.round:nth-child(6) {
+  left: 52%;
+  animation-delay: 3s;
+}
+.round:nth-child(7) {
+  left: 65%;
+  animation-delay: 3.5s;
+}
+.round:nth-child(8) {
+  left: 35%;
+  animation-delay: 4s;
+}
+.round:nth-child(9) {
+  left: 85%;
+  animation-delay: 4.5s;
+}
+.round:nth-child(10) {
+  left: 45%;
+  animation-delay: 5s;
+}
+.round:nth-child(11) {
+  left: 36%;
+  animation-delay: 5.5s;
+}
+.round:nth-child(12) {
+  left: 72%;
+  animation-delay: 6s;
+}
+.round:nth-child(13) {
+  left: 14%;
+  animation-delay: 6.5s;
+}
+.round:nth-child(14) {
+  left: 70%;
+  animation-delay: 7s;
+}
+@keyframes animate {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  20% {
+    top: 20%;
+    opacity: 0.8;
+  }
+  40% {
+    top: 40%;
+    opacity: 0.6;
+  }
+  60% {
+    top: 60%;
+    opacity: 0.4;
+  }
+  80% {
+    top: 80%;
+    opacity: 0.2;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+@keyframes ani-2 {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2.5);
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #131a9b79;
+  border-radius: 15%;
+  max-width: 450px;
+  width: 80%;
+}
+
+form {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+#name, #email, #password {
+  color: #A7E6FF;
+  font-size: 40px;
+}
+
+.container form div {
+  display: flex;
+  flex-wrap: nowrap; /* Add this to prevent wrapping */
+  align-items: center;
+  gap: 10px; /* Adjust the gap to your liking */
+}
+
+input {
+  width: 80%;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  color: #00fdff;
+  border-bottom: 2px solid white;
+}
+::-webkit-input-placeholder {
+  color: #fff; /* Change placeholder text color to white */
+}
+
+:-moz-placeholder {
+  color: #fff; /* Change placeholder text color to white */
+}
+
+::-moz-placeholder {
+  color: #fff; /* Change placeholder text color to white */
+}
+
+:-ms-input-placeholder {
+  color: #fff; /* Change placeholder text color to white */
+}
+
+input:focus {
+  background-color: #a7e6ff86;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+input::after {
+  content: '';
+  display: block;
+  background-color: transparent;
+}
+
+.btn {
+  background-color: #3ABEF9;
+  font-size: 40px;
+  border-radius: 50%; /* Keep the circular shape */
+  width: 60%; /* Reduce the width */
+  padding: 10px;
+  text-align: center;
+  margin: 20px auto; /* Center the button horizontally */
+  transition: background-color 0.3s ease; /* Keep the smooth hover effect */
+  position: relative; /* Add this for the hover animation */
+  overflow: hidden; /* Add this for the hover animation */
+}
+
+.btn:hover {
+  background-color: #2E9CEA; /* Change the background color on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+}
+
+.btn:hover:before {
+  content: ''; /* Add a pseudo-element for the animation */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2E9CEA;
+  transform: translateX(-100%); /* Start the animation from the left */
+  animation: hoverAnim 0.5s ease; /* Define the animation */
+}
+
+@keyframes hoverAnim {
+  to {
+    transform: translateX(0); /* Move the animation from left to right */
+  }
+}
+
+.btn a {
+  text-decoration: none;
+  color: white;
+  position: relative; /* Add this to keep the text on top of the animation */
+  z-index: 1; /* Add this to keep the text on top of the animation */
+}
+/* Media queries */
+
+@media (max-width: 768px) {
+  input[type="text"], input[type="email"], input[type="password"] {
+    font-size: 18px; /* Increase font size */
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #fff; /* Change placeholder text color to white */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  :-moz-placeholder {
+    color: #fff; /* Change placeholder text color to white */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  ::-moz-placeholder {
+    color: #fff; /* Change placeholder text color to white */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  :-ms-input-placeholder {
+    color: #fff; /* Change placeholder text color to white */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  .container {
+    padding: 10px;
+  }
+  .btn {
+    font-size: 30px;
+  }
+  input {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  input[type="text"], input[type="email"], input[type="password"] {
+    font-size: 18px; /* Increase font size */
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #fff; /* Change placeholder text color to white */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  :-moz-placeholder {
+    color: #fff; /* Change placeholder text color to white */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  ::-moz-placeholder {
+    color: #fff; /* Change placeholder text color to white */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  :-ms-input-placeholder {
+    color: #fff; /* Change placeholder text color to white */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  .container {
+     padding: 3px;
+   }
+  .btn {
+     font-size: 20px;
+   }
+   input {
+     font-size: 15px;
+   }
+   /* Remove this rule */
+   /*.container form div {
+     flex-direction: column;
+     align-items: center;
+   } */
+ }
+
+@media (max-width: 320px) {
+  input[type="text"], input[type="email"], input[type="password"] {
+    font-size: 18px; /* Increase font size */
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #fff; /* Change placeholder text color to white */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  :-moz-placeholder {
+    color: #fff; /* Change placeholder text color to white */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  ::-moz-placeholder {
+    color: #fff; /* Change placeholder text color to white */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  :-ms-input-placeholder {
+    color: #fff; /* Change placeholder text color to white */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  .container {
+    padding: 0;
+  }
+  .btn {
+    font-size: 15px;
+  }
+  input {
+    font-size: 10px;
+  }
+}
